@@ -7,6 +7,10 @@ import Register from "../pages/auth/Register";
 const Routes = [
   {
     path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/auth",
     element: (
       <Layout>
         <Outlet />
@@ -14,11 +18,7 @@ const Routes = [
     ),
     children: [
       {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/register",
+        path: "register",
         element: <Register />,
       },
     ],
