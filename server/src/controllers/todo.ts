@@ -13,12 +13,8 @@ export const create = async (req: Request, res: Response) => {
 
   try {
     const data = {
-      uid: parseInt(payload.uid),
+      userId: parseInt(payload.userId),
       title: payload.title,
-      description: payload.description,
-      category: payload.category,
-      date: payload.date,
-      time: payload.time,
     };
 
     const response = await todo.create(data);

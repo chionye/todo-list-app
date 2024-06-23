@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import axios, { Method } from "axios";
-import { test_api } from "../constants/api";
+import { test_api, json_placeholder_api } from "../constants/api";
 
 interface AxiosHookResponse<T> {
   loading: boolean;
@@ -16,7 +16,7 @@ const useAxiosRequest = <T>(): AxiosHookResponse<T> => {
 
   const sendRequest = async (
     method: Method,
-    url: string,
+    url: any,
     data?: any,
     token?: any
   ): Promise<T> => {
@@ -27,13 +27,19 @@ const useAxiosRequest = <T>(): AxiosHookResponse<T> => {
       let response;
       switch (method.toLowerCase()) {
         case "get":
-          response = await axios.get<T>(`${test_api}/${url}`, token);
+          response = await axios.get<T>(
+            `${url ? test_api : json_placeholder_api}/${url}`,
+            token
+          );
           break;
         case "post":
           response = await axios.post<T>(`${test_api}/${url}`, data, token);
           break;
         case "patch":
           response = await axios.patch<T>(`${test_api}/${url}`, data, token);
+          break;
+        case "put":
+          response = await axios.put<T>(`${test_api}/${url}`, data, token);
           break;
         case "delete":
           response = await axios.delete<T>(`${test_api}/${url}`, token);

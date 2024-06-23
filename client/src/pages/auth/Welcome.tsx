@@ -1,8 +1,6 @@
 /** @format */
 
-import { NavLink, useNavigate } from "react-router-dom";
-import checklist from "../assets/Checklist.svg";
-import logo from "../assets/logo.png";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../components";
 import { Greetings } from "../../utils/functions";
 
@@ -11,9 +9,9 @@ const Welcome = () => {
 
   return (
     <>
-      <NavLink to={"#"} className={"logo"}>
+      <h2 className={"logo"}>
         Good {Greetings()}
-      </NavLink>
+      </h2>
       <p className='welcome-text'>Log in or register to get started</p>
       <div className='button-container'>
         <Button handleClick={() => navigate("/login")} label='Login' />

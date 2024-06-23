@@ -17,7 +17,7 @@ export const Nav = () => {
             width={150}
           />
         </NavLink>
-        <div>
+        <div className="flex-link">
           <NavLink
             to={"/"}
             className={({ isActive, isPending }) =>

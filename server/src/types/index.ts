@@ -3,13 +3,9 @@ import { Optional } from "sequelize";
 
 export interface TodoAttributes {
   id: number;
-  uid: number;
+  userId: number;
   title: string;
-  description: string;
-  category: string;
   completed: number;
-  date: string;
-  time: string;
 }
 
 export type TodoCreationAttributes = Optional<TodoAttributes, "id" | "completed">;
@@ -28,12 +24,8 @@ export interface AuthPayload {
 }
 
 export interface TodoPayload {
-  uid: string;
+  userId: string;
   title: string;
-  description: string;
-  category: string;
-  date: string;
-  time: string;
 }
 
 export interface CustomError extends Error {
