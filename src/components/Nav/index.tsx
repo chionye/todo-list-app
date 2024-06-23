@@ -2,6 +2,7 @@
 
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { Button } from "../Button";
+import logo from "../../assets/logo.png";
 
 export const Nav = () => {
   const navigate = useNavigate();
@@ -10,7 +11,12 @@ export const Nav = () => {
     <>
       <nav>
         <NavLink to={"/"} className={"logo"}>
-          Todooles
+          <img
+            src={logo}
+            alt='welcome image'
+            className='welcome-img'
+            width={150}
+          />
         </NavLink>
         <div>
           <NavLink
