@@ -6,7 +6,7 @@
   font-weight: bold; 
   text-transform: capitalize;           /* Make text bold for better readability */
   color: #FFFFFF;               /* Text color */
-  background-color: #1ABC9C;    /* Background color (Teal) */
+  background-color: #24285B;    /* Background color (Teal) */
   border: none;                 /* Remove default border */
   border-radius: 8px;           /* Rounded corners */
   text-align: center;           /* Center text */
@@ -18,7 +18,7 @@
 
 /* Hover State */
 .button:hover {
-  background-color: #16A085;    /* Slightly darker teal for hover effect */
+  background-color: #606497;    /* Slightly darker teal for hover effect */
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
   color: #FFFFFF;  /* Enhance shadow on hover */
 }

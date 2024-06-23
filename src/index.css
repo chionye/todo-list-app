@@ -53,7 +53,7 @@ nav {
 }
 
 .navLink:hover, a:hover, .activeNavLink {
-  color: #2C3E50;
+  color: #24285B;
 }
 
 h1 {
@@ -111,7 +111,7 @@ h1 {
 .input:focus {
   outline: none;
   /* box-shadow: 0 0 0 3px hsla(220, 100%, 50%, 80%); */
-  box-shadow: 0 0 0 2px #E67E22;
+  box-shadow: 0 0 0 2px #606497;
 }
 
 @media (prefers-color-scheme: light) {
@@ -196,7 +196,7 @@ h1 {
     font-size: 28px;
     font-weight: 600;
     text-align: center;
-    color: black;
+    color: #24285B;
 }
 
 .max-w-sm {
