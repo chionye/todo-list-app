@@ -55,17 +55,13 @@ export const login = async (req: Request, res: Response) => {
       if (comparePass) {
         const token = jwt.sign({ id: values.id }, secret, { expiresIn: "1d" });
         values.accessToken = token;
-        res.cookie("token", token, {
-          httpOnly: true,
-          secure: process.env.NODE_ENV === "production",
-          sameSite: "strict",
-        });
+        const { password, ...responseValues } = values;
         return customResponse(
           201,
           res,
           "User logged in successfully",
           true,
-          values
+          responseValues
         );
       } else {
         return customResponse(401, res, "Authentication failed");
@@ -76,13 +72,4 @@ export const login = async (req: Request, res: Response) => {
   } catch (err: any) {
     return customResponse(500, res, `Error: ${err.message}`);
   }
-};
-
-export const logout = (req: Request, res: Response) => {
-  res.clearCookie("token", {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "strict",
-  });
-  return customResponse(200, res, "You have been logged out");
 };

@@ -86,6 +86,7 @@ h1 {
   border: 2px solid #E6D4FE;
   border-radius: 8px;
   width: 100%;
+  color: #24285B;
   background-color: #F2F2F2;
 }
 
@@ -112,6 +113,7 @@ h1 {
   outline: none;
   /* box-shadow: 0 0 0 3px hsla(220, 100%, 50%, 80%); */
   box-shadow: 0 0 0 2px #606497;
+  background-color: white;
 }
 
 @media (prefers-color-scheme: light) {

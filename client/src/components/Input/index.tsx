@@ -35,5 +35,5 @@ export const Input: React.FC<InputProps> = ({
 };
 
 export const Container: React.FC<ContainerProps> = ({ children }) => {
-  return <form className='form'>{children}</form>;
+  return <div className='form'>{children}</div>;
 };

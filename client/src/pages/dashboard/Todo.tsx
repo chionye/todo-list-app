@@ -1,6 +1,6 @@
 
 const Todo = () => {
-  return <div>T</div>;
+  return <div>Todo</div>;
 };
 
 export default Todo;
