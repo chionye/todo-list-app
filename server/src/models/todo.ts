@@ -11,30 +11,17 @@ const todo: ModelDefined<TodoAttributes, TodoCreationAttributes> =
       primaryKey: true,
       allowNull: false,
     },
-    uid: {
+    userId: {
       type: DataTypes.INTEGER,
     },
     title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    category: {
-      type: DataTypes.STRING,
-    },
     completed: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false,
-    },
-    date: {
-      type: DataTypes.STRING,
-    },
-    time: {
-      type: DataTypes.STRING,
     },
     createdAt: {
       type: DataTypes.DATE,

@@ -1,3 +1,5 @@
+/** @format */
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,7 +7,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #ECF0F1;
+  background-color: #ecf0f1;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,13 +17,13 @@
 
 a {
   font-weight: 500;
-  color: #95A5A6;
+  color: #95a5a6;
   text-decoration: inherit;
 }
 
 body {
   margin: 0;
-  background: #ECF0F1;
+  background: #ecf0f1;
 }
 
 .errorPage {
@@ -37,12 +39,12 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 24px;
+  padding: 10px 8px;
   border-bottom: 1px solid lightgray;
 }
 
 .logo {
-  color: #E67E22;
+  color: #e67e22;
   font-weight: 600;
   font-size: 1.75em;
 }
@@ -52,8 +54,15 @@ nav {
   margin: 0 20px;
 }
 
-.navLink:hover, a:hover, .activeNavLink {
-  color: #24285B;
+.navLink:hover,
+a:hover,
+.activeNavLink {
+  color: #24285b;
+}
+
+.heading {
+  color: #24285b;
+  font-size: 2.5em;
 }
 
 h1 {
@@ -83,11 +92,11 @@ h1 {
 
 .input {
   padding: 12px 24px;
-  border: 2px solid #E6D4FE;
+  border: 2px solid #e6d4fe;
   border-radius: 8px;
   width: 100%;
-  color: #24285B;
-  background-color: #F2F2F2;
+  color: #24285b;
+  background-color: #f2f2f2;
 }
 
 .taskItem {
@@ -119,13 +128,13 @@ h1 {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ECF0F1;
+    background-color: #ecf0f1;
   }
-  
+
   a:hover {
     color: #747bff;
   }
-  
+
   button {
     background-color: #f9f9f9;
   }
@@ -137,7 +146,8 @@ h1 {
   text-align: center;
 }
 
-.welcome-left, .welcome-right {
+.welcome-left,
+.welcome-right {
   width: 50%;
   display: flex;
   justify-content: center;
@@ -180,7 +190,7 @@ h1 {
   gap: 10px;
   margin-top: 20px;
 }
-.welcome-text{
+.welcome-text {
   font-size: 16px;
   color: #213547;
   padding: 0px;
@@ -188,25 +198,31 @@ h1 {
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .title {
-    font-size: 28px;
-    font-weight: 600;
-    text-align: center;
-    color: #24285B;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  color: #24285b;
+}
+
+.task-title{
+  font-size: 20px;
+  font-weight: 600;
+  color: #24285b;
 }
 
 .max-w-sm {
-    margin-top: 20px;
-    width: 400px;
-    border-radius: 10px;
-    padding: 20px;
-    border: .8px solid var(--primary);
+  margin-top: 20px;
+  width: 400px;
+  border-radius: 10px;
+  padding: 20px;
+  border: 0.8px solid var(--primary);
 }
 
 .my {
@@ -217,11 +233,47 @@ h1 {
   margin-top: 10px;
 }
 
-@media screen and (max-width: 450px) {
-  .welcome-right{
+main {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.container {
+  padding: 10px 2%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+.grid {
+  margin: 20px 0;
+  width: 100%;
+  overflow-x: scroll;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  column-gap: 10px;
+}
+
+.loader-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    width: 100%;
+  }
+
+  .welcome-right {
     display: none;
   }
-  .welcome-left{
+  .welcome-left {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
     width: 80%;
@@ -237,5 +289,14 @@ h1 {
   }
   .input {
     padding: 12px 7px;
+  }
+  .container {
+    padding-left: 5px;
+  }
+  .flex-link{
+    display: flex;
+  }
+  .navLink{
+    margin: 0 10px;
   }
 }
