@@ -6,7 +6,7 @@ const { PORT, DB_HOST, DB_USER, DB_PASS, DB_NAME, SECRET } = process.env;
 
 export const config = {
   port: PORT,
-  secret: SECRET,
+  secret: SECRET || "defaultSecretKey",
   db: {
     host: DB_HOST,
     name: DB_NAME as string,

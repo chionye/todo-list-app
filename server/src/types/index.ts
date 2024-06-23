@@ -5,14 +5,14 @@ export interface TodoAttributes {
   id: number;
   uid: number;
   title: string;
-  description: number;
+  description: string;
   category: string;
   completed: number;
   date: string;
   time: string;
 }
 
-export type TodoCreationAttributes = Optional<TodoAttributes, "id">;
+export type TodoCreationAttributes = Optional<TodoAttributes, "id" | "completed">;
 
 export interface UserAttributes {
   id: number;
@@ -21,3 +21,17 @@ export interface UserAttributes {
 }
 
 export type UserCreationAttributes = Optional<UserAttributes, "id">;
+
+export interface AuthPayload {
+  email: string;
+  password: string;
+}
+
+export interface TodoPayload {
+  uid: string;
+  title: string;
+  description: string;
+  category: string;
+  date: string;
+  time: string;
+}

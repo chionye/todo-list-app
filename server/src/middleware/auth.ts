@@ -1,10 +1,9 @@
-/** @format */
 
 import jwt from "jsonwebtoken";
 import { config } from "../config/constants";
 import { NextFunction, Request, Response } from "express";
 
-const secret = config.secret || "defaultSecretKey";
+const secret = config.secret;
 
 const verifyToken = async (req: Request, res:Response, next: NextFunction) => {
   try {
