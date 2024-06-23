@@ -1,6 +1,6 @@
 /** @format */
 
-import user from "./users";
+import user from "./user";
 import todo from "./todo";
 import { sequelizeConnection } from "../config/db";
 

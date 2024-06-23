@@ -1,18 +1,12 @@
-/** @format */
 
 import dotenv from "dotenv";
 dotenv.config();
 
-const {
-  PORT,
-  DB_HOST,
-  DB_USER,
-  DB_PASS,
-  DB_NAME,
-} = process.env;
+const { PORT, DB_HOST, DB_USER, DB_PASS, DB_NAME, SECRET } = process.env;
 
 export const config = {
   port: PORT,
+  secret: SECRET,
   db: {
     host: DB_HOST,
     name: DB_NAME as string,
