@@ -7,7 +7,7 @@ interface AuthLayoutProps {
   children: React.ReactNode;
 }
 
-const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
+const Layout: React.FC<AuthLayoutProps> = ({ children }) => {
   return (
     <div className='welcome-container'>
       <div className='welcome-left'>
@@ -33,4 +33,4 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
   );
 };
 
-export default AuthLayout;
+export default Layout;

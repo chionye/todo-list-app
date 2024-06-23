@@ -1,12 +1,11 @@
 /** @format */
 
-import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "../Button";
 import logo from "../../assets/logo.png";
+import { Logout } from "../../services/storage";
 
 export const Nav = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
   return (
     <>
       <nav>
@@ -34,11 +33,7 @@ export const Nav = () => {
             About
           </NavLink>
         </div>
-        {location.pathname === "/login" ? (
-          <Button handleClick={() => navigate("/register")} label='register' />
-        ) : (
-          <Button handleClick={() => navigate("/login")} label='log in' />
-        )}
+        <Button handleClick={Logout} label='log out' />
       </nav>
     </>
   );

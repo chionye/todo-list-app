@@ -2,7 +2,7 @@
 
 import { Nav } from "../../components";
 
-const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
       <Nav />
@@ -11,4 +11,4 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default DashboardLayout;
+export default Layout;
