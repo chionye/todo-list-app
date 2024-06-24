@@ -91,20 +91,6 @@ const Todo = () => {
     }
   };
 
-  // const filterTasks = (category: string) => {
-  //   setActiveCategory(category);
-  //   switch (category) {
-  //     case "Active":
-  //       setFilter(tasks.filter((task) => !task.completed));
-  //       break;
-  //     case "Completed":
-  //       setFilter(tasks.filter((task) => task.completed));
-  //       break;
-  //     default:
-  //       setFilter(tasks);
-  //   }
-  // };
-
   useEffect(() => {
     const fetchTodo = async () => {
       const data = await sendRequest("get", "", null);
