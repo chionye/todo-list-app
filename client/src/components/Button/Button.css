@@ -1,0 +1,103 @@
+
+.button {
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 14px; 
+  font-weight: bold;
+  text-transform: capitalize; 
+  color: #ffffff; 
+  background-color: #24285b;
+  border: none; 
+  border-radius: 8px; 
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer; 
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background-color: #606497; 
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+
+.button:active {
+  background-color: #149174;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(26, 188, 156, 0.4);
+}
+
+.button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  box-shadow: none;
+  color: #bdc3c7;
+}
+
+.button .icon {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.outline {
+  display: inline-block;
+  padding: 7px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #24285b; 
+  background-color: #ffffff; 
+  border: 1px solid #24285b;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.outline:hover {
+  background-color: #606497;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+.active {
+  display: inline-block;
+  padding: 7px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #ffffff;
+  background-color: #24285b; 
+  border: 1px solid #24285b;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: #24285b;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .button {
+    padding: 8px 8px;
+    text-wrap: nowrap;
+  }
+}
