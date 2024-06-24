@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import {
-  Alert,
   Button,
   Empty,
   Modal,
@@ -15,21 +14,8 @@ import {
 import { getCookieData } from "../../services/storage";
 import useAxiosRequest from "../../hooks/useAxiosRequest";
 import { toast } from "react-toastify";
-
-// Interface for Task object
-interface TaskType {
-  id: number;
-  userId?: number;
-  title: string;
-  completed: boolean;
-}
-
-// Interface for User object
-interface UserType {
-  id: string;
-  email: string;
-  todos: TaskType[];
-}
+import { filterTasks } from "../../services/helpers";
+import { TaskType } from "../../types";
 
 const Todo = () => {
   const user = getCookieData("user");
@@ -38,8 +24,6 @@ const Todo = () => {
   const [filter, setFilter] = useState<TaskType[]>(user?.todos || []);
   const [category] = useState<string[]>(["All", "Active", "Completed"]);
   const [editData, setEditData] = useState<Partial<TaskType>>({});
-  const [success, setSuccess] = useState<string>("");
-  const [error, setError] = useState<string>("");
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [task, setTask] = useState<Record<string, string>>({
     userId: user?.id || "",
@@ -47,23 +31,7 @@ const Todo = () => {
   });
   const { loading, sendRequest } = useAxiosRequest<any>();
 
-  const fetchTodo = async (url: string) => {
-    const data = await sendRequest("get", url, null);
-    const response = data;
-    if (url) {
-      setTasks({ ...tasks, ...response.data });
-      setFilter({ ...filter, ...response.data });
-    } else {
-      setTasks(data);
-      setFilter(data);
-    }
-  };
-
-  const deleteTask = async (
-    event: React.MouseEvent,
-    key: number,
-    id: number
-  ) => {
+  const deleteTask = async (event: React.MouseEvent, id: number) => {
     event.preventDefault();
     try {
       await sendRequest("delete", `todo/${id}`, null);
@@ -100,6 +68,10 @@ const Todo = () => {
     setTask({ ...task, [target.name]: target.value });
   };
 
+  const handleFilterChange = (category: string) => {
+    filterTasks(category, tasks, setActiveCategory, setFilter);
+  };
+
   const handleEditChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEditData({ ...editData, [e.target.name]: e.target.value });
   };
@@ -119,22 +91,29 @@ const Todo = () => {
     }
   };
 
-  const filterTasks = (category: string) => {
-    setActiveCategory(category);
-    switch (category) {
-      case "Active":
-        setFilter(tasks.filter((task) => !task.completed));
-        break;
-      case "Completed":
-        setFilter(tasks.filter((task) => task.completed));
-        break;
-      default:
-        setFilter(tasks);
-    }
-  };
+  // const filterTasks = (category: string) => {
+  //   setActiveCategory(category);
+  //   switch (category) {
+  //     case "Active":
+  //       setFilter(tasks.filter((task) => !task.completed));
+  //       break;
+  //     case "Completed":
+  //       setFilter(tasks.filter((task) => task.completed));
+  //       break;
+  //     default:
+  //       setFilter(tasks);
+  //   }
+  // };
 
   useEffect(() => {
-    fetchTodo("");
+    const fetchTodo = async () => {
+      const data = await sendRequest("get", "", null);
+      const response = data;
+
+      setTasks(response);
+      setFilter(response);
+    };
+    fetchTodo();
   }, []);
 
   return (
@@ -150,14 +129,16 @@ const Todo = () => {
             {category.map((item, key) => (
               <Outline
                 key={key}
-                handleClick={() => filterTasks(item)}
+                handleClick={() =>
+                  handleFilterChange(item)
+                }
                 title={item}
                 cn={item === activeCategory ? "active" : ""}
               />
             ))}
           </div>
           {loading ? (
-            <div className="loader-container">
+            <div className='loader-container'>
               <Loader />
             </div>
           ) : (
@@ -172,7 +153,7 @@ const Todo = () => {
                     setCheck={handleCheck}
                     position={key}
                     handleChange={handleEditChange}
-                    deleteTask={(e) => deleteTask(e, key, item.id)}
+                    deleteTask={(e) => deleteTask(e, item.id)}
                   />
                 ))
               ) : (

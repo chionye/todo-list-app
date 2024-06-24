@@ -1,11 +1,6 @@
 import React from "react";
 import "./Modal.css";
-
-interface ModalProps {
-  children: React.ReactNode;
-  show: boolean;
-  close: () => void;
-}
+import { ModalProps } from "../../types";
 
 export const Modal: React.FC<ModalProps> = ({ children, show, close }) => {
   const handleModalClick = (

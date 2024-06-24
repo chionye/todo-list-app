@@ -1,6 +1,6 @@
 /** @format */
 
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Button } from "../Button";
 import logo from "../../assets/logo.png";
 import { Logout } from "../../services/storage";
@@ -17,7 +17,7 @@ export const Nav = () => {
             width={150}
           />
         </NavLink>
-        <div className="flex-link">
+        <div className='flex-link'>
           <NavLink
             to={"/"}
             className={({ isActive, isPending }) =>
@@ -33,7 +33,9 @@ export const Nav = () => {
             About
           </NavLink>
         </div>
-        <Button handleClick={Logout} label='log out' />
+        <NavLink to={"#"} onClick={Logout} className={"logout"}>
+          log out
+        </NavLink>
       </nav>
     </>
   );

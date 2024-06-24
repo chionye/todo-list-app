@@ -1,16 +1,7 @@
+import { ContainerProps, InputProps } from "../../types";
 import "./Input.css";
 
-interface InputProps {
-  label: string;
-  handleChange: React.ChangeEventHandler<HTMLInputElement>;
-  type: string;
-  name: string;
-  required: boolean;
-}
 
-interface ContainerProps {
-    children: React.ReactNode
-}
 
 export const Input: React.FC<InputProps> = ({
   label,
@@ -21,11 +12,12 @@ export const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <div className='form-group'>
-      <label>{label}</label>
+      <label htmlFor={name}>{label}</label>
       <input
         type={type}
         name={name}
         title={name}
+        id={name}
         required={required}
         className='input'
         onChange={handleChange}

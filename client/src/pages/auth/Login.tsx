@@ -28,7 +28,7 @@ function Login() {
   const handleFormSubmit = async () => {
     try {
       const data = await sendRequest("post", "user/login", formData);
-      const { accessToken, ...user } = data.data;
+      const { accessToken, ...user } = data;
       setCookie("@user", JSON.stringify(user), 1);
       setCookie("@token", JSON.stringify(accessToken), 1);
       setSuccess(data.message);

@@ -2,23 +2,7 @@
 import "./Button.css";
 import { Loader } from "../";
 import React from "react";
-
-interface ButtonProps {
-  label: string;
-  showLoading?: boolean;
-  handleClick: React.MouseEventHandler<HTMLButtonElement>;
-}
-
-interface OutlineProps {
-  title: string;
-  cn?:string;
-  handleClick: React.MouseEventHandler<HTMLButtonElement>;
-}
-
-interface IconProps {
-  children: React.ReactNode;
-  handleClick: React.MouseEventHandler<HTMLButtonElement>;
-}
+import { ButtonProps, IconProps, OutlineProps } from "../../types";
 
 export const Button: React.FC<ButtonProps> = ({
   label,

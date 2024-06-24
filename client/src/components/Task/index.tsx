@@ -5,23 +5,7 @@ import { Icon } from "@iconify/react";
 import { Button, IconButton } from "../Button";
 import "./Task.css";
 import { Input, Container } from "../Input";
-
-interface TaskProps {
-  title: string;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  completed: boolean;
-  setCheck: (status: boolean, key: number, id: number) => Promise<void>;
-  deleteTask: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  taskId: number;
-  position: number;
-}
-
-interface TaskFormProps {
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  submit: () => void;
-  modal: (show: boolean) => void;
-  showloading: boolean;
-}
+import { TaskContainerProps, TaskFormProps, TaskProps } from "../../types";
 
 export const Task: React.FC<TaskProps> = ({
   title,
@@ -98,13 +82,6 @@ export const TaskForm: React.FC<TaskFormProps> = ({
           label='Title'
           type='text'
           name='title'
-          required
-          handleChange={handleChange}
-        />
-        <Input
-          label='Description'
-          type='text'
-          name='description'
           required
           handleChange={handleChange}
         />

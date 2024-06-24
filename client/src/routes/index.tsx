@@ -7,6 +7,8 @@ import Register from "../pages/auth/Register";
 import Login from "../pages/auth/Login";
 import ProtectedRoute from "./protectedroute";
 import Todo from "../pages/dashboard/Todo";
+import About from "../pages/dashboard/About";
+import Error from "../pages/Error";
 
 const Routes = [
   {
@@ -16,6 +18,7 @@ const Routes = [
         <Outlet />
       </Layout>
     ),
+    errorElement: <Error />,
     children: [
       {
         path: "/",
@@ -31,13 +34,14 @@ const Routes = [
       },
       {
         path: "about",
-        element: <Register />,
+        element: <About />,
       },
     ],
   },
   {
     path: "/dashboard",
     element: <ProtectedRoute />,
+    errorElement: <Error />,
     children: [
       {
         path: "todo",

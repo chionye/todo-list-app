@@ -11,7 +11,7 @@ const ProtectedRoute = () => {
       <Outlet />{" "}
     </Layout>
   ) : (
-    <Navigate to='/' replace />
+    <Navigate to='/login' replace />
   );
 };
 export default ProtectedRoute;
