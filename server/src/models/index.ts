@@ -4,8 +4,8 @@ import user from "./user";
 import todo from "./todo";
 import { sequelizeConnection } from "../config/db";
 
-user.hasMany(todo, { foreignKey: "uid", sourceKey: "id" });
-todo.belongsTo(user, { foreignKey: "uid", targetKey: "id" });
+user.hasMany(todo, { foreignKey: "userId", sourceKey: "id" });
+todo.belongsTo(user, { foreignKey: "userId", targetKey: "id" });
 
 sequelizeConnection
   .sync()
