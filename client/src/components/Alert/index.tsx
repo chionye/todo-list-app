@@ -2,11 +2,8 @@
 
 import { Icon } from "@iconify/react";
 import "./Alert.css";
+import { AlertProps } from "../../types";
 
-interface AlertProps {
-  status: string;
-  message: string;
-}
 
 export const Alert: React.FC<AlertProps> = ({ status, message }) => {
   return (

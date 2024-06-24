@@ -1,96 +1,87 @@
-/**
- * .Button Container
- *
- * @format
- */
 
 .button {
   display: inline-block;
-  padding: 12px 24px; /* Adjust padding for size */
-  font-size: 14px; /* Adjust font size */
+  padding: 8px 12px;
+  font-size: 14px; 
   font-weight: bold;
-  text-transform: capitalize; /* Make text bold for better readability */
-  color: #ffffff; /* Text color */
-  background-color: #24285b; /* Background color (Teal) */
-  border: none; /* Remove default border */
-  border-radius: 8px; /* Rounded corners */
-  text-align: center; /* Center text */
-  text-decoration: none; /* Remove underline */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-transform: capitalize; 
+  color: #ffffff; 
+  background-color: #24285b;
+  border: none; 
+  border-radius: 8px; 
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer; 
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover State */
 .button:hover {
-  background-color: #606497; /* Slightly darker teal for hover effect */
+  background-color: #606497; 
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-  color: #ffffff; /* Enhance shadow on hover */
+  color: #ffffff;
 }
 
-/* Active/Pressed State */
+
 .button:active {
-  background-color: #149174; /* Even darker teal for active state */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduce shadow for pressed effect */
+  background-color: #149174;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Focus State for Accessibility */
 .button:focus {
-  outline: none; /* Remove default focus outline */
-  box-shadow: 0 0 0 4px rgba(26, 188, 156, 0.4); /* Custom focus outline */
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(26, 188, 156, 0.4);
 }
 
-/* Disabled State */
 .button:disabled {
-  background-color: #95a5a6; /* Gray background for disabled state */
-  cursor: not-allowed; /* Not-allowed cursor for disabled state */
-  box-shadow: none; /* Remove shadow for disabled state */
-  color: #bdc3c7; /* Lighten text color */
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  box-shadow: none;
+  color: #bdc3c7;
 }
 
-/* Additional Styles for Icons (if needed) */
 .button .icon {
-  margin-right: 8px; /* Space between icon and text */
-  vertical-align: middle; /* Align icon vertically with text */
+  margin-right: 8px;
+  vertical-align: middle;
 }
 
 .outline {
   display: inline-block;
-  padding: 7px 10px; /* Adjust padding for size */
-  font-size: 14px; /* Adjust font size */
+  padding: 7px 10px;
+  font-size: 14px;
   font-weight: bold;
-  text-transform: capitalize; /* Make text bold for better readability */
-  color: #24285b; /* Text color */
-  background-color: #ffffff; /* Background color (Teal) */
-  border: 1px solid #24285b; /* Remove default border */
-  border-radius: 15px; /* Rounded corners */
-  text-align: center; /* Center text */
-  text-decoration: none; /* Remove underline */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-transform: capitalize;
+  color: #24285b; 
+  background-color: #ffffff; 
+  border: 1px solid #24285b;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .outline:hover {
-  background-color: #606497; /* Slightly darker teal for hover effect */
+  background-color: #606497;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-  color: #ffffff; /* Enhance shadow on hover */
+  color: #ffffff;
 }
 
 .active {
   display: inline-block;
-  padding: 7px 10px; /* Adjust padding for size */
-  font-size: 14px; /* Adjust font size */
+  padding: 7px 10px;
+  font-size: 14px;
   font-weight: bold;
-  text-transform: capitalize; /* Make text bold for better readability */
-  color: #ffffff; /* Text color */
-  background-color: #24285b; /* Background color (Teal) */
-  border: 1px solid #24285b; /* Remove default border */
-  border-radius: 15px; /* Rounded corners */
-  text-align: center; /* Center text */
-  text-decoration: none; /* Remove underline */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  text-transform: capitalize;
+  color: #ffffff;
+  background-color: #24285b; 
+  border: 1px solid #24285b;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 

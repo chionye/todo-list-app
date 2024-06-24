@@ -1,68 +1,34 @@
-/** @format */
 
-import { format } from "date-fns";
+import { TaskType } from "../types";
 
-export const filterAndSortGraphData = (data: any) => {
-  if (!data) {
-    return "";
-  }
-  console.log(data);
-  return data
-    .map((transaction: any) => ({
-      date: new Date(transaction.createdAt),
-      amount: transaction.amount,
-    }))
-    .sort((a: any, b: any) => a.date.getTime() - b.date.getTime())
-    .map((transaction: any, index: 0) => {
-      if (index == 0 || data.length - 1 == index) {
-        console.log(transaction);
-        return {
-          date: format(transaction.date, "MMM d yyyy"),
-          amount: transaction.amount,
-        };
-      }
-      if (index > 0 && index < data.length) {
-        return {
-          amount: transaction.amount,
-        };
-      }
-    });
-};
 
-export const getWindowDimensions = () => {
-  const { innerWidth: width, innerHeight: height } = window;
-  return {
-    width,
-    height,
-  };
-};
-
-export const formatAmount = (amount: number) => {
-  if (amount == null || isNaN(amount)) {
-    return "0.00";
-  }
-
-  return amount.toLocaleString(undefined, {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  });
-};
-
-export const encodeIfURL = (str: string): string => {
-  try {
-    const url = new URL(str);
-    console.log(url);
-    return encodeURI(str);
-  } catch (error) {
-    return str;
-  }
-};
-
-export const parseId = (link: string) => {
-  switch (true) {
-    case link.includes("youtube.com/watch?v="):
-      return link.split("?v=")[1].split("&")[0];
+export const filterTasks = (
+  category: string,
+  tasks: TaskType[],
+  setActiveCategory: React.Dispatch<React.SetStateAction<string>>,
+  setFilter: React.Dispatch<React.SetStateAction<TaskType[]>>
+) => {
+  setActiveCategory(category);
+  switch (category) {
+    case "Active":
+      setFilter(tasks.filter((task) => !task.completed));
+      break;
+    case "Completed":
+      setFilter(tasks.filter((task) => task.completed));
+      break;
     default:
-      return null;
+      setFilter(tasks);
   }
+};
+
+export const Greetings = () => {
+  const myDate = new Date();
+  const hours = myDate.getHours();
+  let greet;
+
+  if (hours < 12) greet = "Morning";
+  else if (hours >= 12 && hours <= 17) greet = "Afternoon";
+  else if (hours >= 17 && hours <= 24) greet = "Evening";
+
+  return greet;
 };

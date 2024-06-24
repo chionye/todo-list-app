@@ -4,14 +4,18 @@
   "scripts": {
     "server": "npm run dev --prefix server",
     "client": "npm run dev --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server-setup": "npm install --prefix server",
+    "client-setup": "npm install --prefix client",
+    "project-setup": "npm install",
+    "setup": "concurrently \"npm run project-setup\" \"npm run client-setup\" \"npm run server-setup\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "axios": "^1.7.2",
     "concurrently": "^8.2.2"
-  }
+  },
+  "devDependencies": {}
 }

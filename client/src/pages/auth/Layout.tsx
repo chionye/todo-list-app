@@ -2,10 +2,7 @@
 
 import checklist from "../../assets/Checklist.svg";
 import logo from "../../assets/logo.png";
-
-interface AuthLayoutProps {
-  children: React.ReactNode;
-}
+import { AuthLayoutProps } from "../../types";
 
 const Layout: React.FC<AuthLayoutProps> = ({ children }) => {
   return (

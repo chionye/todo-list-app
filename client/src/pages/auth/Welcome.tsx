@@ -2,7 +2,7 @@
 
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../components";
-import { Greetings } from "../../utils/functions";
+import { Greetings } from "../../services/helpers";
 
 const Welcome = () => {
   const navigate = useNavigate();
